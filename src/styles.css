@@ -11,7 +11,7 @@
 }
 .col-day {
   text-align: center;
-  border: 2px solid #2e94b9;
+  border: 2px solid;
   border-radius: 10px;
   padding: 5px;
   margin: 5px;
@@ -43,6 +43,18 @@
 .unitsLink {
   text-decoration: none;
   color: #2b4450;
+}
+
+.bottomInscription {
+  margin-top: 20px;
+  text-align: center;
+}
+.bottomLink {
+  text-decoration: none;
+  color: #2e94b9;
+}
+.bottomLink:hover {
+  color: darkblue;
 }
 button {
   background: transparent;
