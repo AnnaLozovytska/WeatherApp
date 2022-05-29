@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>WeatherApp</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="weather" class="weather-container">
+        <div class="App">
+          <div class="search-city">
+            <form class="search" id="#search">
+              <input type="text" placeholder=" Enter a city" class="input-city" id="input-city" autocomplete="off"/>
+              <button type="submit" id="but-submit" >Search</button>
+              <button id="but-current">
+                Current
+              </button>
+            </form>
+          </div>
+          <div class="container weather-now">
+            <div class="row row-cols-2">
+              <div class="col">
+                <h2>Weather in <span id="city-name">Kyiv</span></h2>
+                <p id="now-date">Monday 20:00 - 16 May</p>
+              </div>
+              <div class="rol">
+
+              </div>
+              <div class="rol float-left" >
+                <p> <span id="icon-main">☁</span> 
+                  <span class="temperNow" id="temper-now">12</span> 
+                  <span class="units"> <a href="#" class="unitsLink" id="celsius">&#176C</a> 
+                    |<a href="#" class="unitsLink" id="fahrenheit">&#176F</a>
+                  </span></p>
+                <p class="weatherCondition">Cloudy</p>
+              </div>
+              <div class="rol">
+                <p class="indexWeather">
+                 Precipitation: 81% <br />
+                 Wind: 5km/h <br />
+                 Sunrise: 05:15 <br />
+                 Sunset: 20:41 <br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container weather-days">
+            <div class="row">
+              <div class="col col-day">
+                <p class="title-day">
+                  Tue
+                  <br />
+                  17 May
+                </p>
+                <h5 class="temp-day">
+                   🌥 18&#176C
+                </h5>
+              </div>
+              <div class="col col-day">
+                <p class="title-day">
+                  Wed
+                  <br />
+                  18 May
+                </p>
+                <h5 class="temp-day">
+                   🌨 15&#176C
+                </h5>
+              </div>
+              <div class="col col-day">
+                <p class="title-day">
+                  Thu
+                  <br />
+                  19 May
+                </p>
+                <h5 class="temp-day">
+                   ☀ 21&#176C
+                </h5>
+              </div>
+              <div class="col col-day">
+                <p class="title-day">
+                  Fri
+                  <br />
+                  20 May
+                </p>
+                <h5 class="temp-day">
+                   🌥 16&#176C
+                </h5>
+              </div>
+              <div class="col col-day">
+                <p class="title-day">
+                  Sat
+                  <br />
+                  21 May
+                </p>
+                <h5 class="temp-day">
+                   🌩 16&#176C
+                </h5>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/scripts.js"></script>
+  </body>
+</html>
