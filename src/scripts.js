@@ -21,6 +21,7 @@ function currentWeather(response) {
   let sunrise = document.querySelector("#sunrise");
   let sunset = document.querySelector("#sunset");
   let iconMain = document.querySelector("#icon-main");
+  let description = document.querySelector("#description");
   console.log(currentTemp);
   console.log(response.data.name);
   console.log(response.data.dt);
@@ -28,6 +29,7 @@ function currentWeather(response) {
   tempNow.innerHTML = `${currentTemp}`;
   precipitation.innerHTML = response.data.main.humidity;
   wind.innerHTML = response.data.wind.speed;
+  description.innerHTML = response.data.weather[0].description;
   sunrise.innerHTML = timeSunRiseSet(response.data.sys.sunrise * 1000);
   sunset.innerHTML = timeSunRiseSet(response.data.sys.sunset * 1000);
   iconMain.setAttribute(
