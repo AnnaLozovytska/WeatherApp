@@ -32,25 +32,28 @@
             <div class="row row-cols-2">
               <div class="col">
                 <h2>Weather in <span id="city-name">Kyiv</span></h2>
-                <p id="now-date">Monday 20:00 - 16 May</p>
+                <p id="now-date">Monday 20:00 - 16 May <br />
+                 <span>Cloudy</span></p>
               </div>
               <div class="rol">
 
               </div>
               <div class="rol float-left" >
-                <p> <span id="icon-main">☁</span> 
+                <p> 
+                  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Cloudy" id="icon-main"> 
+                  <span class="temper-with-units">
                   <span class="temperNow" id="temper-now">12</span> 
                   <span class="units"> <a href="#" class="unitsLink" id="celsius">&#176C</a> 
                     |<a href="#" class="unitsLink" id="fahrenheit">&#176F</a>
                   </span></p>
-                <p class="weatherCondition">Cloudy</p>
+                </span>
               </div>
               <div class="rol">
                 <p class="indexWeather">
-                 Precipitation: 81% <br />
-                 Wind: 5km/h <br />
-                 Sunrise: 05:15 <br />
-                 Sunset: 20:41 <br />
+                 Precipitation: <span id="precipitation">81</span>% <br />
+                 Wind: <span id="wind">5</span>km/h <br />
+                 Sunrise: <span id="sunrise">05:15</span><br />
+                 Sunset: <span id="sunset">20:41</span><br />
                 </p>
               </div>
             </div>
