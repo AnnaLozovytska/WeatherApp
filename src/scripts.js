@@ -12,6 +12,75 @@ function searchCity(event) {
   }
 }
 
+function getGorecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "5761993d693e3553594e3f4afeabb8b6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function formatDateForecast(timestamp) {
+  let date = new Date(timestamp);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  day = days[day];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+  let dateNumber = date.getUTCDate();
+  let dateStringForecast = `${day} <br /> ${dateNumber} ${month}`;
+  return dateStringForecast;
+}
+
+function displayForecast(response) {
+  console.log(formatDateForecast(response.data.daily[0].dt * 1000));
+  console.log(formatDateForecast(response.data.daily[1].dt * 1000));
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecastHTML = `<div class="row">`;
+
+  for (let i = 1; i < 6; i++) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col col-day">
+                <p class="title-day">
+                  ${formatDateForecast(
+                    response.data.daily[i].dt * 1000
+                  )}                  
+                </p>
+                <img src="http://openweathermap.org/img/wn/${
+                  response.data.daily[i].weather[0].icon
+                }@2x.png" alt="Cloudy" id="icon-forecast"> 
+                <h5 class="temp-day">
+                  <span>${Math.round(
+                    response.data.daily[i].temp.max
+                  )}&#176</span>
+                  <span class="min-temp">${Math.round(
+                    response.data.daily[i].temp.min
+                  )}&#176</span>                               
+                </h5>
+              </div>              
+  `;
+  }
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function currentWeather(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let tempNow = document.querySelector("#temper-now");
@@ -36,6 +105,7 @@ function currentWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getGorecast(response.data.coord);
 
   return currentTemp;
 }

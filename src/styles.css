@@ -7,14 +7,19 @@
   padding: 30px;
   border: 2px solid whitesmoke;
   border-radius: 40px;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(
+    179.1deg,
+    rgb(247, 238, 238) -1.9%,
+    rgb(247, 202, 201) 44.9%,
+    rgb(145, 168, 208) 96.1%
+  );
 }
 .nowDate {
   margin: 0;
 }
 .col-day {
   text-align: center;
-  border: 2px solid #2e94b9;
+  border: 2px solid #4270c4;
   border-radius: 10px;
   padding: 5px;
   margin: 5px;
@@ -35,7 +40,7 @@
 .input-city {
   width: 310px;
   background-color: aliceblue;
-  border: 2px solid #2e94b9;
+  border: 2px solid #4270c4;
   padding: 4px 0;
   border-radius: 10px;
 }
@@ -61,10 +66,10 @@
 }
 .bottomLink {
   text-decoration: none;
-  color: #2e94b9;
+  color: darkblue;
 }
 .bottomLink:hover {
-  color: darkblue;
+  color: blueviolet;
 }
 #description {
   text-transform: capitalize;
@@ -73,7 +78,7 @@ button {
   background: transparent;
   border: 2px solid;
   border-radius: 10px;
-  color: #2e94b9;
+  color: #4270c4;
   padding: 5px 15px;
   text-align: center;
   text-decoration: none;
@@ -82,7 +87,13 @@ button {
   font-weight: bold;
   background-color: aliceblue;
 }
+#icon-forecast {
+  width: 70px;
+}
+.min-temp {
+  color: gray;
+}
 button:hover {
-  background: #2e94b9;
+  background: #4270c4;
   color: #f6f2fe;
 }
